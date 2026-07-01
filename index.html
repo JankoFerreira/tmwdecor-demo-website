@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailor Made Window Decor | Custom Blinds, Curtains &amp; Shutters</title>
+  <meta name="description" content="Tailor Made Window Decor — custom blinds, curtains, shutters and window styling, made to measure for your home.">
+
+  <!-- Google Fonts: Cormorant Garamond (display) + Inter (body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       LOADING SCREEN — Vertical Blinds Reveal
+       A row of vertical slats covers the screen on load. Each
+       slat rotates open (like a real vertical blind turning on
+       its track), then the whole assembly slides left and away to
+       reveal the homepage that has been sitting ready underneath.
+       See styles.css (#loader) and script.js for the sequencing.
+  ========================================================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="blind-track" id="blindTrack">
+      <!-- Slats are generated in script.js for easy count adjustments -->
+    </div>
+    <div class="loader-mark">
+      <span class="loader-kicker">Custom window decor</span>
+      <div class="loader-name" aria-label="Tailor Made Window Decor">
+        <span>Tailor Made</span>
+        <span>Window Decor</span>
+      </div>
+      <div class="loader-rule" aria-hidden="true"><span></span></div>
+      <span class="loader-measure">Made to measure</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SITE CONTENT (sits ready behind the loader at all times)
+  ========================================================== -->
+  <div id="page">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="#home" class="logo">Tailor&nbsp;Made <span>Window&nbsp;Decor</span></a>
+
+        <nav class="main-nav" id="mainNav">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="#configurator" class="btn btn-primary nav-cta" data-configurator-open>Get a Quote</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- HERO SECTION -->
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Custom Window Decor</p>
+            <h1 class="hero-heading">
+              Tailor&#8209;Made
+              <span class="hero-word-rotator" aria-live="polite">
+                <span class="hero-word is-active">Blinds</span>
+                <span class="hero-word">Curtains</span>
+                <span class="hero-word">Shutters</span>
+                <span class="hero-word hero-word--long">Window Decor</span>
+              </span>
+            </h1>
+            <p class="hero-text">
+              Custom window styling, measuring and installation for blinds, curtains, shutters and more.
+              From first measure to final fitting, every finish is made to order and styled around
+              your home.
+            </p>
+            <div class="hero-actions">
+              <a href="#services" class="btn btn-primary">Explore Services</a>
+              <a href="#contact" class="btn btn-outline">Get a Quote</a>
+            </div>
+          </div>
+
+          <!-- Roller-blind image wall inspired by premium window-treatment reveal panels -->
+          <div class="hero-gallery hero-roller-wall reveal" aria-label="Window decor service previews">
+            <article class="roller-panel roller-panel--tall">
+              <div class="roller-blade-track">
+                <img src="assets/images/darren-richardson--E7D6OhcAVY-unsplash.webp" alt="Styled window covering detail" class="tile-md">
+                <img src="assets/images/mike-cox-JXZ3bA_qLM4-unsplash.webp" alt="Warm interior blinds filtering natural light" class="tile-sm">
+                <img src="assets/images/mitchell-luo-b7hgnFuX4Rc-unsplash.webp" alt="Tailored interior window finish" class="tile-lg">
+                <img src="assets/images/tibor-pinter-m1wtQs8dX3k-unsplash.webp" alt="Detailed custom blind texture and finish" class="tile-sm">
+              </div>
+              <span>Blinds</span>
+            </article>
+            <article class="roller-panel roller-panel--offset roller-panel--slow">
+              <div class="roller-blade-track">
+                <img src="assets/images/sarah-dao-Yga9HIaTVIM-unsplash.webp" alt="Soft interior window styling" class="tile-lg">
+                <img src="assets/images/phillip-goldsberry-HzqjZiHdwaM-unsplash.webp" alt="Elegant curtains in a finished interior" class="tile-sm">
+                <img src="assets/images/jonathan-borba-qMYhrV18sTU-unsplash.webp" alt="Finished home interior with tailored window decor" class="tile-md">
+                <img src="assets/images/quilia-g6JDakzgoXA-unsplash.webp" alt="Soft curtain fabric and interior styling" class="tile-sm">
+              </div>
+              <span>Curtains</span>
+            </article>
+            <article class="roller-panel roller-panel--tall roller-panel--reverse">
+              <div class="roller-blade-track">
+                <img src="assets/images/shutter3.webp" alt="Tall custom shutter installation" class="tile-lg">
+                <img src="assets/images/shutter1.webp" alt="Finished shutter window decor" class="tile-sm">
+                <img src="assets/images/shutter2.webp" alt="Custom shutter project detail" class="tile-md">
+                <img src="assets/images/yvonne-deleon-JGuqDxqP9Tc-unsplash.webp" alt="Bright window shade and decor detail" class="tile-sm">
+              </div>
+              <span>Shutters</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES PREVIEW -->
+      <section class="services" id="services">
+        <div class="container">
+          <p class="eyebrow center reveal">What We Do</p>
+          <h2 class="section-heading center reveal">Made&#8209;to&#8209;Measure, Start to Finish</h2>
+
+          <div class="services-grid">
+
+            <article class="service-card reveal">
+              <img src="assets/images/darren-richardson--E7D6OhcAVY-unsplash.webp" alt="Sunlit horizontal blinds on a window" class="service-media blind-reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M6 8h36M6 16h36M6 24h36M6 32h36M6 40h36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Custom Blinds</h3>
+              <p>Venetian, roller and panel blinds cut and fitted precisely to your windows.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="assets/images/sarah-dao-Yga9HIaTVIM-unsplash.webp" alt="Curtains framing a residential window" class="service-media blind-reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M8 6v36M40 6v36M8 10c8 4 24 4 32 0M8 18c8 4 24 4 32 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Curtains</h3>
+              <p>Flowing, tailored curtains in fabrics selected to match your interior.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="assets/images/shutter3.webp" alt="Finished window decor with fitted shutters" class="service-media blind-reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="M8 14h32M8 22h32M8 30h32M24 6v36" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <h3>Shutters</h3>
+              <p>Plantation and café-style shutters for a timeless, structured finish.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="assets/images/mitchell-luo-b7hgnFuX4Rc-unsplash.webp" alt="Styled window treatment detail" class="service-media blind-reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="2" fill="none"/><path d="M24 13v11l8 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Window Styling</h3>
+              <p>Full consultations pairing fabric, colour and hardware room by room.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="assets/images/shutter1.webp" alt="Bright windows prepared for fitted coverings" class="service-media blind-reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M24 6l16 8v8c0 12-7 18-16 22-9-4-16-10-16-22v-8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M17 24l5 5 9-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Installations</h3>
+              <p>Professional, tidy fitting carried out by our own experienced team.</p>
+            </article>
+
+            <article class="service-card reveal">
+              <img src="assets/images/mike-cox-JXZ3bA_qLM4-unsplash.webp" alt="Close-up of window blind slats for repairs and replacements" class="service-media blind-reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M24 8a16 16 0 1 0 11.3 4.7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M24 4v10l8-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Repairs &amp; Replacements</h3>
+              <p>Restrings, mechanism fixes and slat or panel replacements on existing decor.</p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY ANCHOR (preview lives in hero; this id lets nav scroll to it sensibly) -->
+      <section class="gallery-strip" id="gallery">
+        <div class="container">
+          <p class="eyebrow center reveal">Recent Work</p>
+          <h2 class="section-heading center reveal">A Few Of Our Favourite Finishes</h2>
+          <div class="gallery-grid">
+            <img src="assets/images/shutter1.webp" alt="Custom shutter installation" class="gallery-img reveal blind-reveal">
+            <img src="assets/images/dimas-anggara-VIk1nwibgNE-unsplash.webp" alt="Tailored interior window styling" class="gallery-img reveal blind-reveal">
+            <img src="assets/images/shutter2.webp" alt="Window styling detail" class="gallery-img reveal blind-reveal">
+            <img src="assets/images/sarah-dao-Yga9HIaTVIM-unsplash.webp" alt="Curtain styling detail" class="gallery-img reveal blind-reveal">
+            <img src="assets/images/quilia-g6JDakzgoXA-unsplash.webp" alt="Window decor finish detail" class="gallery-img reveal blind-reveal">
+            <img src="assets/images/shutter3.webp" alt="Tall shutter finish" class="gallery-img reveal blind-reveal">
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about who-we-are-section" id="about">
+        <div class="container about-inner">
+          <div class="about-image who-image-wrap reveal" data-who-image>
+            <img class="who-image" src="assets/images/quilia-g6JDakzgoXA-unsplash.webp" alt="Soft window decor detail in a bright interior">
+            <div class="who-slats" aria-hidden="true"></div>
+            <div class="who-light" aria-hidden="true"></div>
+          </div>
+          <div class="about-copy reveal">
+            <p class="eyebrow">Who We Are</p>
+            <h2 class="section-heading">Personalised Service, Made to Measure</h2>
+            <p>
+              Tailor Made Window Decor was built on a simple idea: window decor should be
+              fitted to the home, not the other way around. We measure on site, talk through
+              fabrics and finishes in person, and make every order to your exact dimensions.
+            </p>
+            <p>
+              The result is a stylish, lasting finish — blinds that sit flush, curtains that
+              fall the way they should, and shutters built to last. No off-the-shelf compromises,
+              just a service shaped entirely around your space.
+            </p>
+            <ul class="about-points">
+              <li>One-on-one consultations at your home</li>
+              <li>Made-to-measure for every window, every time</li>
+              <li>Premium fabrics and stylish, lasting finishes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIGURATOR -->
+      <section class="configurator" id="configurator">
+        <div class="container">
+          <div class="configurator-heading reveal">
+            <p class="eyebrow center">Design Your Finish</p>
+            <h2 class="section-heading center" id="configuratorTitle">Configure Your Blind or Curtain</h2>
+            <p>
+              Choose a product, room, finish and extras to see a live estimate before sending
+              your details through for a tailored quote.
+            </p>
+            <div class="configurator-launch-actions">
+              <button type="button" class="btn btn-primary" id="openConfigurator" data-configurator-open>Configure My Estimate</button>
+              <a href="#contact" class="btn btn-outline">Speak to Us</a>
+            </div>
+          </div>
+
+          <div class="configurator-modal" id="configuratorModal" role="dialog" aria-modal="true" aria-labelledby="configuratorTitle" aria-hidden="true" inert>
+            <div class="configurator-backdrop" data-configurator-close></div>
+            <div class="configurator-dialog" role="document">
+              <div class="configurator-modal-head">
+                <div>
+                  <p class="eyebrow">Design Your Finish</p>
+                  <h3>Configure Your Blind or Curtain</h3>
+                </div>
+                <button type="button" class="configurator-close" aria-label="Close configurator" data-configurator-close>Close</button>
+              </div>
+
+              <div class="configurator-shell">
+            <div class="configurator-controls reveal">
+              <div class="config-group">
+                <div class="config-group-head">
+                  <span>Product</span>
+                  <strong id="configProductLabel">Roller Blind</strong>
+                </div>
+                <div class="choice-grid choice-grid-products">
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="roller" checked><span>Roller Blind</span></label>
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="venetian"><span>Venetian Blind</span></label>
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="vertical"><span>Vertical Blind</span></label>
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="roman"><span>Roman Blind</span></label>
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="sheer"><span>Sheer Curtain</span></label>
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="blockout"><span>Blockout Curtain</span></label>
+                  <label class="choice-pill"><input type="radio" name="configProduct" value="zebra"><span>Zebra Blind</span></label>
+                </div>
+              </div>
+
+              <div class="config-group">
+                <div class="config-group-head">
+                  <span>Room</span>
+                  <strong id="configRoomLabel">Living Room</strong>
+                </div>
+                <div class="choice-grid choice-grid-rooms">
+                  <label class="choice-pill"><input type="radio" name="configRoom" value="living" checked><span>Living Room</span></label>
+                  <label class="choice-pill"><input type="radio" name="configRoom" value="bedroom"><span>Bedroom</span></label>
+                  <label class="choice-pill"><input type="radio" name="configRoom" value="kitchen"><span>Kitchen</span></label>
+                  <label class="choice-pill"><input type="radio" name="configRoom" value="office"><span>Office</span></label>
+                  <label class="choice-pill"><input type="radio" name="configRoom" value="patio"><span>Patio</span></label>
+                </div>
+              </div>
+
+              <div class="config-group">
+                <div class="config-group-head">
+                  <span>Measurements</span>
+                  <strong id="configAreaLabel">1.44m&sup2;</strong>
+                </div>
+                <div class="measurement-grid">
+                  <div class="measure-control" data-measure-control="width">
+                    <label for="configWidth">Width</label>
+                    <div class="stepper">
+                      <button type="button" data-step="-100">-100</button>
+                      <button type="button" data-step="-10">-10</button>
+                      <button type="button" data-step="-1">-1</button>
+                      <input type="number" id="configWidth" min="400" max="5000" step="1" value="1200" inputmode="numeric">
+                      <button type="button" data-step="1">+1</button>
+                      <button type="button" data-step="10">+10</button>
+                      <button type="button" data-step="100">+100</button>
+                    </div>
+                    <span>400mm to 5000mm</span>
+                  </div>
+                  <div class="measure-control" data-measure-control="height">
+                    <label for="configHeight">Height</label>
+                    <div class="stepper">
+                      <button type="button" data-step="-100">-100</button>
+                      <button type="button" data-step="-10">-10</button>
+                      <button type="button" data-step="-1">-1</button>
+                      <input type="number" id="configHeight" min="400" max="4000" step="1" value="1200" inputmode="numeric">
+                      <button type="button" data-step="1">+1</button>
+                      <button type="button" data-step="10">+10</button>
+                      <button type="button" data-step="100">+100</button>
+                    </div>
+                    <span>400mm to 4000mm</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="config-group">
+                <div class="config-group-head">
+                  <span>Finish / Fabric</span>
+                  <strong id="configFinishLabel">Warm Linen</strong>
+                </div>
+                <div class="finish-grid">
+                  <label class="finish-swatch"><input type="radio" name="configFinish" value="linen" checked><span class="swatch swatch-linen"></span><span>Warm Linen</span></label>
+                  <label class="finish-swatch"><input type="radio" name="configFinish" value="oat"><span class="swatch swatch-oat"></span><span>Soft Oat</span></label>
+                  <label class="finish-swatch"><input type="radio" name="configFinish" value="walnut"><span class="swatch swatch-walnut"></span><span>Walnut</span></label>
+                  <label class="finish-swatch"><input type="radio" name="configFinish" value="charcoal"><span class="swatch swatch-charcoal"></span><span>Charcoal</span></label>
+                </div>
+              </div>
+
+              <div class="config-group">
+                <div class="config-group-head">
+                  <span>Extras</span>
+                  <strong id="configExtrasLabel">None selected</strong>
+                </div>
+                <div class="extras-grid">
+                  <label class="extra-check"><input type="checkbox" name="configExtras" value="installation"><span>Professional installation</span></label>
+                  <label class="extra-check"><input type="checkbox" name="configExtras" value="lining"><span>Blockout lining</span></label>
+                  <label class="extra-check"><input type="checkbox" name="configExtras" value="motorisation"><span>Motorisation</span></label>
+                  <label class="extra-check"><input type="checkbox" name="configExtras" value="rail"><span>Curtain rail/track</span></label>
+                  <label class="extra-check"><input type="checkbox" name="configExtras" value="safety"><span>Child safety chain</span></label>
+                </div>
+              </div>
+
+              <div class="config-measure-guide">
+                <span>Measuring Note</span>
+                <p>For blinds, measure the inside recess width and drop. For curtains, measure the full track or rail width. Final pricing is confirmed after an on-site measure.</p>
+              </div>
+            </div>
+
+            <aside class="configurator-preview reveal" aria-live="polite">
+              <div class="preview-sticky">
+                <div class="window-stage" data-preview-stage>
+                  <div class="window-arch"></div>
+                  <div class="window-glass"><span></span><span></span><span></span><span></span></div>
+                  <div class="window-treatment" id="windowTreatment"></div>
+                </div>
+                <div class="estimate-panel">
+                  <div class="config-summary-strip" id="configSummaryStrip">Roller Blind / Living Room / 1200 x 1200mm / Warm Linen</div>
+                  <span class="estimate-kicker">Estimated Range</span>
+                  <strong id="estimateRange">R2,900 - R3,700</strong>
+                  <p id="estimateSummary">Roller Blind for a Living Room, 1200mm x 1200mm in Warm Linen.</p>
+                </div>
+                <form class="quote-lead-form preview-quote-form reveal" id="configLeadForm" novalidate>
+            <div class="lead-form-copy">
+              <p class="eyebrow">Quote Lead</p>
+              <h3>Send This Design to Us</h3>
+              <p>We will use your selections as a starting point and confirm final pricing after measuring.</p>
+            </div>
+            <div class="lead-form-fields">
+              <div class="form-row"><label for="leadName">Name</label><input type="text" id="leadName" name="name" placeholder="Your full name" required></div>
+              <div class="form-row"><label for="leadPhone">Phone</label><input type="tel" id="leadPhone" name="phone" placeholder="Your phone number" required></div>
+              <div class="form-row"><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@example.com" required></div>
+              <div class="form-row"><label for="leadSuburb">Suburb</label><input type="text" id="leadSuburb" name="suburb" placeholder="Your suburb" required></div>
+              <div class="form-row">
+                <label for="leadContactMethod">Preferred Contact Method</label>
+                <select id="leadContactMethod" name="contactMethod" required>
+                  <option value="">Select one</option>
+                  <option value="phone">Phone call</option>
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="email">Email</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit">Send My Design &amp; Estimate</button>
+              <p class="form-note quote-success" id="quoteSuccess" aria-live="polite"></p>
+            </div>
+          </form>
+              </div>
+            </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <div class="container contact-inner">
+
+          <div class="contact-intro reveal">
+            <p class="eyebrow">Get In Touch</p>
+            <h2 class="section-heading">Let's Style Your Windows</h2>
+            <p>
+              Send us a few details about your space and we'll get back to you with guidance,
+              ideas and a quote — no obligation, no pressure.
+            </p>
+
+            <div class="contact-buttons">
+              <a href="https://www.facebook.com/JCSblinds1/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.79c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z" fill="currentColor"/></svg>
+                Follow on Facebook
+              </a>
+              <a href="https://wa.me/27000000000" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.7c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-1.2-.5-2.1-1.2-2.8-2.4-.1-.2-.1-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6l-.6-1.5c-.1-.3-.4-.3-.6-.3h-.5c-.2 0-.5.1-.6.3-.2.3-.7.9-.7 2 0 1.2 1 2.4 1.1 2.6.1.2 1.6 2.5 4 3.4 2 .8 2.4.6 2.8.6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2Z" fill="currentColor"/></svg>
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone or Email</label>
+              <input type="text" id="phone" name="phone" placeholder="How can we reach you?" required>
+            </div>
+            <div class="form-row">
+              <label for="interest">I'm Interested In</label>
+              <select id="interest" name="interest">
+                <option>Custom Blinds</option>
+                <option>Curtains</option>
+                <option>Shutters</option>
+                <option>Window Styling Consultation</option>
+                <option>Repairs / Replacements</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="message">Tell Us About Your Space</label>
+              <textarea id="message" name="message" rows="4" placeholder="Room, window size, style you have in mind..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Enquiry</button>
+            <p class="form-note" id="formNote" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#home" class="logo footer-logo">Tailor&nbsp;Made <span>Window&nbsp;Decor</span></a>
+        <p>&copy; <span id="year"></span> Tailor Made Window Decor. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <div class="floating-actions" aria-label="Quick actions">
+    <button class="floating-action floating-action-top" id="backToTop" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5 5.5 11.5l1.4 1.4L11 8.8V20h2V8.8l4.1 4.1 1.4-1.4L12 5Z" fill="currentColor"/></svg>
+    </button>
+    <button class="floating-action floating-action-whatsapp" id="floatingWhatsapp" type="button" aria-label="Open WhatsApp chat preview" data-whatsapp-open>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.7c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-1.2-.5-2.1-1.2-2.8-2.4-.1-.2-.1-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6l-.6-1.5c-.1-.3-.4-.3-.6-.3h-.5c-.2 0-.5.1-.6.3-.2.3-.7.9-.7 2 0 1.2 1 2.4 1.1 2.6.1.2 1.6 2.5 4 3.4 2 .8 2.4.6 2.8.6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2Z" fill="currentColor"/></svg>
+    </button>
+  </div>
+
+  <aside class="whatsapp-preview" id="whatsappPreview" aria-labelledby="whatsappPreviewTitle" aria-live="polite" hidden>
+    <div class="whatsapp-preview-header">
+      <span class="whatsapp-preview-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.7c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-1.2-.5-2.1-1.2-2.8-2.4-.1-.2-.1-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6l-.6-1.5c-.1-.3-.4-.3-.6-.3h-.5c-.2 0-.5.1-.6.3-.2.3-.7.9-.7 2 0 1.2 1 2.4 1.1 2.6.1.2 1.6 2.5 4 3.4 2 .8 2.4.6 2.8.6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2Z" fill="currentColor"/></svg>
+      </span>
+      <div>
+        <p id="whatsappPreviewTitle">Tailor Made Window Decor</p>
+        <span>Usually replies shortly</span>
+      </div>
+      <button type="button" class="whatsapp-preview-close" aria-label="Close WhatsApp preview" data-whatsapp-close>&times;</button>
+    </div>
+    <div class="whatsapp-preview-body">
+      <p class="whatsapp-preview-bubble">Hi, welcome to Tailor Made Window Decor. Send us a message and we will help with blinds, curtains, measurements or a quote.</p>
+      <div class="whatsapp-preview-actions">
+        <a href="https://wa.me/27000000000?text=Hi%20Tailor%20Made%20Window%20Decor%2C%20I%27d%20like%20help%20with%20window%20decor." target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-whatsapp-direct>Continue to WhatsApp</a>
+        <button type="button" class="btn btn-outline" data-whatsapp-close>Maybe Later</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
