@@ -25,23 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
      All durations here are mirrored in styles.css transitions —
      keep them in sync if you change timing.
   =============================================================== */
-  const SLAT_COUNT = 12;          // number of vertical blind slats
-  const OPEN_DURATION_MS = 1500;  // matches .slat-blade transition duration in CSS
-  const OPEN_DELAY_MAX_MS = 420;  // largest per-blade delay set below
-  const HOLD_AFTER_OPEN_MS = 220; // brief pause once open, before sliding away
-  const EXIT_DURATION_MS = 760;   // matches .blind-track exit transition duration in CSS
-  const LOADER_INTRO_MS = 900;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const smallScreen = window.matchMedia('(max-width: 760px)').matches;
+  const SLAT_COUNT = 8;           // visible intro without the old startup jank
+  const OPEN_DURATION_MS = 780;   // matches .slat-blade transition duration in CSS
+  const OPEN_DELAY_MAX_MS = 180;  // largest per-blade delay set below
+  const HOLD_AFTER_OPEN_MS = 120; // brief pause once open, before sliding away
+  const EXIT_DURATION_MS = 420;   // matches .blind-track exit transition duration in CSS
+  const LOADER_INTRO_MS = 260;
 
   const loader = document.getElementById('loader');
   const blindTrack = document.getElementById('blindTrack');
   const body = document.body;
 
-  if (loader && blindTrack) body.classList.add('is-loading');
+  function finishLoader() {
+    if (loader) loader.remove();
+    body.classList.remove('is-loading');
+    checkReveals();
+  }
+
+  if (loader && blindTrack && !reduceMotion && !smallScreen) body.classList.add('is-loading');
   document.querySelectorAll('.hero .reveal').forEach((el) => el.classList.add('is-visible'));
 
   // a) Build the slats (each is a slot with a coloured blade inside —
   //    see styles.css for why the two-layer structure is needed)
-  if (loader && blindTrack) {
+  if (loader && blindTrack && !reduceMotion && !smallScreen) {
     const slatWidthPercent = 100 / SLAT_COUNT;
     for (let i = 0; i < SLAT_COUNT; i++) {
       const slat = document.createElement('div');
@@ -50,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const blade = document.createElement('div');
       blade.className = 'slat-blade';
       const bladeNumber = i + 1;
-      const openDelay = bladeNumber % 4 === 0 ? 420 : bladeNumber % 3 === 0 ? 240 : 0;
+      const openDelay = bladeNumber % 4 === 0 ? 180 : bladeNumber % 2 === 0 ? 90 : 0;
       blade.style.setProperty('--open-delay', `${openDelay}ms`);
       slat.appendChild(blade);
 
@@ -59,9 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function runLoaderSequence() {
-    if (!loader || !blindTrack) {
-      body.classList.remove('is-loading');
-      checkReveals();
+    if (!loader || !blindTrack || reduceMotion || smallScreen) {
+      finishLoader();
       return;
     }
 
@@ -87,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Give the brand mark a quick reveal before the slats open.
-  setTimeout(runLoaderSequence, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : LOADER_INTRO_MS);
+  setTimeout(runLoaderSequence, reduceMotion || smallScreen ? 0 : LOADER_INTRO_MS);
 
 
   /* ===============================================================
@@ -216,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   =============================================================== */
   const whoSection = document.querySelector('.who-we-are-section');
   const whoImageWrap = document.querySelector('[data-who-image]');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = reduceMotion;
 
   if (whoSection && whoImageWrap) {
     const slatsLayer = whoImageWrap.querySelector('.who-slats');
@@ -711,8 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Desktop-only pointer treatment: a small gold dot and a soft ring
      that expands over links, buttons and form controls.
   =============================================================== */
-  const canUseCustomCursor = window.matchMedia('(pointer: fine)').matches &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canUseCustomCursor = false;
 
   if (canUseCustomCursor) {
     const cursorDot = document.createElement('div');
